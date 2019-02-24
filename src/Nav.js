@@ -14,11 +14,11 @@ export default class Nav extends Component {
                     <Link className='nav__link' to='/current'>
                         Current
                     </Link>
-                    <Link className='nav__link' to='/radar'>
-                        Radar
-                    </Link>
                     <Link className='nav__link' to='/forecast'>
                         Forecast
+                    </Link>
+                    <Link className='nav__link' to='/radar'>
+                        Radar
                     </Link>
                     <Link className='nav__link' to='/location'>
                         Location <span style={{color: 'magenta'}}>{this.props.zipCode}</span>
