@@ -1,0 +1,28 @@
+.nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    height: 60px;
+    background-color: #EFEFEF;
+
+    &__logo {
+        margin: 20px;
+        color: #232323;
+        font-size: 48px;
+        font-family: 'Shrikhand', cursive;
+    }
+
+    &__links {
+        
+    }
+
+    &__link {
+        text-decoration: none;
+        margin: 10px;
+        color: #232323;
+        font-size: 24px;
+    }
+
+}

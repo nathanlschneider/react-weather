@@ -1,23 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import About from './About';
+import { Route } from 'react-router-dom';
+import Nav from './Nav';
+import Current from './Current';
+import Radar from './Radar';
 import './App.scss';
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
-
-const App = () => (
-  <Router>
-    <nav>
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
-      <Route exact path='/' component={Home} />
-      <Route path='/about' component={About} />
-    </nav>
-  </Router>
-);
+const App = () => {
+    return (
+        <div className='app'>
+        
+            <div className='app__container'>
+                <header className='app__header'>
+                    <Nav />
+                </header>
+                <main className='app__main'>
+                    <Route path='/radar' component={Radar} />
+                    <Route path='/current' component={Current} />
+                </main>
+                <footer className='app_footer' />
+            </div>
+        </div>
+    );
+};
 
 export default App;
