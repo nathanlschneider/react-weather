@@ -5,7 +5,7 @@
     align-items: center;
     flex-direction: row;
     height: 60px;
-    background-color: #EFEFEF;
+    background-color: #efefef;
 
     &__logo {
         margin: 20px;
@@ -15,7 +15,6 @@
     }
 
     &__links {
-        
     }
 
     &__link {
@@ -24,5 +23,4 @@
         color: #232323;
         font-size: 24px;
     }
-
 }

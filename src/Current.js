@@ -40,7 +40,6 @@ export default class Current extends Component {
   render() {
     return (
       <article className='current__article'>
-        <img className='current__icon' src={`http://openweathermap.org/img/w/${this.state.icon}.png`} alt='icon' />
         <div className='current__text'>
           Currently in {this.state.name} it's {this.state.mainTemp}&#8457; with {this.state.weatherDescription}.
         </div>

@@ -1,21 +1,16 @@
+@import './mixins.scss';
+
 .current__article {
-  text-align: center;
-  animation: fadeIn 1.5s ease-out;
+    text-align: center;
+    @include fadein;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .current__text {
-  font-size: 44px;
-  padding: 160px;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-35px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    font-size: 44px;
+    padding: 0 10% 0 10%;
 }

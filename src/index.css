@@ -11,7 +11,7 @@ body {
     #a3a3a3 120px
   );
   font-family: 'Montserrat', sans-serif;
-
+overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

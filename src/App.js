@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import Nav from './Nav';
 import Current from './Current';
 import Radar from './Radar';
+import Forecast from './Forecast'
 import './App.scss';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
                 <main className='app__main'>
                     <Route path='/radar' component={Radar} />
                     <Route path='/current' component={Current} />
+                    <Route path='/forecast' component={Forecast} />
                 </main>
                 <footer className='app_footer' />
             </div>

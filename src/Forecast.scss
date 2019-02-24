@@ -1,0 +1,10 @@
+@import './mixins.scss';
+
+.forecast__article {
+    @include fadein;
+}
+
+.forecast__text {
+    font-size: 44px;
+    padding: 0 10% 0 10%;
+}
