@@ -17,24 +17,23 @@ export default class Current extends Component {
 
   static defaultProps = { zipCode: 49418 };
 
-  componentDidMount() {
-    fetch(
+  async componentDidMount() {
+    const res = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?zip=${this.props.zipCode},us&units=imperial&appid=${
         Key.openWeather
       }`
-    )
-      .then(response => response.text())
-      .then(text => JSON.parse(text))
-      .then(data =>
-        this.setState({
-          weatherMain: data.weather[0].main,
-          weatherDescription: data.weather[0].description,
-          name: data.name,
-          mainTemp: data.main.temp,
-          mainHumidity: data.main.humidity,
-          icon: data.weather[0].icon
-        })
-      );
+    );
+
+    const data = await res.json();
+
+    this.setState({
+      weatherMain: data.weather[0].main,
+      weatherDescription: data.weather[0].description,
+      name: data.name,
+      mainTemp: data.main.temp,
+      mainHumidity: data.main.humidity,
+      icon: data.weather[0].icon
+    });
   }
 
   render() {
