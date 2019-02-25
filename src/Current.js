@@ -15,9 +15,8 @@ export default class Current extends Component {
     };
   }
 
-  static defaultProps = { zipCode: 49418 };
-
   async componentDidMount() {
+    
     const res = await fetch(
       `http://api.openweathermap.org/data/2.5/weather?zip=${this.props.zipCode},us&units=imperial&appid=${
         Key.openWeather
