@@ -8,22 +8,19 @@ export default class Nav extends Component {
     constructor(props) {
         super(props);
         this.state = { value: false };
-        this.handleClick = this.handleClick.bind(this);
         this.handleMouseOver = this.handleMouseOver.bind(this);
     }
 
-    handleClick() {
-       this.setState({ value: !this.state.value });
-    }
+   
 
     handleMouseOver() {
         this.setState({ value: true });
     }
 
     render() {
-      let menu;
+    //   let menu;
   
-      this.state.value ? menu = this.props.form : menu = '';
+    //   this.state.value ? menu = this.props.form : menu = '';
   
         return (
             <nav className='nav'>
@@ -38,12 +35,10 @@ export default class Nav extends Component {
                     <Link className='nav__link' to='/radar'>
                         Radar
                     </Link>
-                    <span className='nav__link' onClick={this.handleClick}>
-                        Location <span style={{ color: 'magenta' }}>{this.props.zipCode}</span>
-                    </span>
+                    {this.props.locationLink}
                 </div>
-                <CSSTransitionGroup transitionName='example' transitionEnterTimeout={500} transitionLeaveTimeout={300}>
-                    {menu}
+                <CSSTransitionGroup transitionName='example' transitionEnterTimeout={200} transitionLeaveTimeout={200}>
+                    {this.props.form}
                 </CSSTransitionGroup>
             </nav>
         );

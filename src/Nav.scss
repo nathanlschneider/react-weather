@@ -45,7 +45,8 @@
 
 .example-enter.example-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: all 200ms ease;
+  transform: translateY(20px);
 }
 
 .example-leave {
@@ -54,5 +55,7 @@
 
 .example-leave.example-leave-active {
   opacity: 0.01;
-  transition: opacity 300ms ease-in;
+  transition: all 200ms ease-in;
+  transform: translateY(-20px);
+
 }

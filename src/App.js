@@ -7,54 +7,67 @@ import Forecast from './Forecast';
 import './App.scss';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      zipCode: 49418,
-      value: null
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+    constructor(props) {
+        super(props);
+        this.state = {
+            zipCode: 49418,
+            value: null,
+            showMenu: false
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
+    handleClick() {
+        this.setState({ showMenu: !this.state.showMenu });
+    }
 
-  handleSubmit(event) {
-    this.setState({ zipCode: this.state.value });
+    handleChange(event) {
+        this.setState({ value: event.target.value });
+    }
 
-    event.preventDefault();
-  }
+    handleSubmit(event) {
+        this.setState({ zipCode: this.state.value });
+        this.setState({ showMenu: false });
+        event.preventDefault();
+    }
 
-  render() {
-    return (
-      <div className='app'>
-        <div className='app__container'>
-          <header className='app__header'>
-            <Nav
-              zipCode={this.state.zipCode}
-              form={
-                <div className='nav__form'>
-                  <form onSubmit={this.handleSubmit}>
-                    <label>
-                      Zip Code
-                      <input type='text' onChange={this.handleChange} />
-                    </label>
-                    <input type='submit' value='Submit' />
-                  </form>
+    render() {
+        return (
+            <div className='app'>
+                <div className='app__container'>
+                    <header className='app__header'>
+                        <Nav
+                            zipCode={this.state.zipCode}
+                            form={
+                                this.state.showMenu ? (
+                                    <div className='nav__form'>
+                                        <form onSubmit={this.handleSubmit}>
+                                            <label>
+                                                Zip Code
+                                                <input type='text' onChange={this.handleChange} />
+                                            </label>
+                                            <input type='submit' value='Submit' />
+                                        </form>
+                                    </div>
+                                ) : null
+                            }
+                            locationLink={
+                                <span className='nav__link' onClick={this.handleClick}>
+                                    Location <span style={{ color: 'magenta' }}>{this.state.zipCode}</span>
+                                </span>
+                            }
+                        />
+                    </header>
+                    <main className='app__main'>
+                        <Route path='/radar' component={Radar} />
+                        <Route path='/current' render={props => <Current {...props} zipCode={this.state.zipCode} />} />
+                        <Route path='/forecast' component={Forecast} />
+                    </main>
+                    <footer className='app_footer' />
                 </div>
-              }
-            />
-          </header>
-          <main className='app__main'>
-            <Route path='/radar' component={Radar} />
-            <Route path='/current' render={props => <Current {...props} zipCode={this.state.zipCode} />} />
-            <Route path='/forecast' component={Forecast} />
-          </main>
-          <footer className='app_footer' />
-        </div>
-      </div>
-    );
-  }
+            </div>
+        );
+    }
 }
