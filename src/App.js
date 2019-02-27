@@ -43,8 +43,9 @@ export default class App extends Component {
               form={
                 this.state.showMenu ? (
                   <form className='nav__form' onSubmit={this.handleSubmit}>
-                    <label>Zip Code</label>
+                    <label className='form__label'>Zip Code</label>
                     <input
+                      className='form__input form__input--magenta'
                       type='text'
                       pattern='[0-9]{5}'
                       placeholder='12345'
@@ -52,7 +53,7 @@ export default class App extends Component {
                       required
                       autoFocus
                     />
-                    <input type='submit' value='Submit' />
+                    <input className='form__btn' type='submit' value='Submit' />
                   </form>
                 ) : null
               }
