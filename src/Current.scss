@@ -1,19 +1,33 @@
 @import './mixins.scss';
-
-.current__article {
-  text-align: center;
+.current {
   @include fadein;
-  height: calc(100vh - 60px);
   display: flex;
-  flex-direction: column;
-  // justify-content: center;
+  justify-content: center;
   align-items: center;
-}
 
-.current__text {
-  font-size: 44px;
-  padding: 0 10% 0 10%;
-}
+    &__article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #23232311;
+    padding: 20px;
+    border-radius: 5px;
+    
+    margin-top: 100px;
+    }
+    &__text {
+      font-size: 36px;
+      &--small {
+        font-size: 32px;
+        font-weight: 100;
+      }
+    }
 
-.current__icon {
+    &__icon {
+      border: 2px solid #23232355;
+      
+        padding: 10px;
+        border-radius: 5px;
+  
+    }
 }
