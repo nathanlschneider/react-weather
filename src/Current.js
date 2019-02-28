@@ -30,7 +30,7 @@ export default class Current extends Component {
       name: data.name,
       mainTemp: data.main.temp,
       mainHumidity: data.main.humidity,
-      icon: data.weather[0].icon
+      icon: data.weather[0].id
     });
   }
 
@@ -38,7 +38,10 @@ export default class Current extends Component {
     return (
       <article className='current__article'>
         <div className='current__text'>
-          Currently in {this.state.name} it's {this.state.mainTemp}&#8457; with {this.state.weatherDescription}.
+          <i className={'current__icon owf owf-3x owf-' + this.state.icon} />
+          <div>
+            Currently in {this.state.name} it's {this.state.mainTemp}&#8457; with {this.state.weatherDescription}.
+          </div>
         </div>
       </article>
     );

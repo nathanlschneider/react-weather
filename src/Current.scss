@@ -1,16 +1,19 @@
 @import './mixins.scss';
 
 .current__article {
-    text-align: center;
-    @include fadein;
-    height: calc(100vh - 60px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  @include fadein;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .current__text {
-    font-size: 44px;
-    padding: 0 10% 0 10%;
+  font-size: 44px;
+  padding: 0 10% 0 10%;
+}
+
+.current__icon {
 }

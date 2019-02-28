@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Shrikhand');
+@import './owfont-master/css/owfont-regular.min.css';
 
 body {
   margin: 0;
   padding: 0;
-  background: repeating-linear-gradient(
-    30deg,
-    #d88ec8,
-    #d88ec8 60px,
-    #a3a3a3 60px,
-    #a3a3a3 120px
-  );
+  background: repeating-linear-gradient(30deg, #d88ec8, #d88ec8 60px, #a3a3a3 60px, #a3a3a3 120px);
   font-family: 'Montserrat', sans-serif;
-overflow: hidden;
+  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
