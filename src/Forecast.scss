@@ -1,24 +1,25 @@
 @import './mixins.scss';
 
 .forecast {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  &__date {
+    font-size: 12px;
+  }
+  &__article {
+    @include fadein;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    &__date {
-        font-size: 12px;
-    }
-    &__article {
-        @include fadein;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background-color: rgb(189, 189, 189);
-        width: 200px;
-        height: 100px;
-        margin: 10px;
-        border-radius: 5px;
-    }
+    flex-direction: column;
+    background-color: rgb(189, 189, 189);
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #23232399;
+  }
 }
