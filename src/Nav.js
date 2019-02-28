@@ -33,8 +33,11 @@ export default class Nav extends Component {
             {this.props.locationLink}
           </div>
         </nav>
-        <CSSTransitionGroup transitionName='example' transitionEnterTimeout={200} transitionLeaveTimeout={200}>
-          {this.props.form}
+        <CSSTransitionGroup 
+            transitionName='example' 
+            transitionEnterTimeout={200} 
+            transitionLeaveTimeout={200}>
+            {this.props.form}
         </CSSTransitionGroup>
       </>
     );

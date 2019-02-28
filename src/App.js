@@ -12,15 +12,17 @@ export default class App extends Component {
     this.state = {
       zipCode: 49418,
       value: null,
-      showMenu: false
+      showMenu: false,
+      menuLocation: null
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    this.setState({ showMenu: !this.state.showMenu });
+  handleClick(event) {
+    this.setState({ showMenu: !this.state.showMenu, menuLocation: event.clientX - 150 });
   }
 
   handleChange(event) {
@@ -42,7 +44,7 @@ export default class App extends Component {
               zipCode={this.state.zipCode}
               form={
                 this.state.showMenu ? (
-                  <form className='nav__form' onSubmit={this.handleSubmit}>
+                  <form className='nav__form' style={{left: this.state.menuLocation + 'px'}} onSubmit={this.handleSubmit}>
                     <label className='form__label'>Zip Code</label>
                     <input
                       className='form__input form__input--magenta'
@@ -59,7 +61,7 @@ export default class App extends Component {
               }
               locationLink={
                 <span className='nav__link' onClick={this.handleClick}>
-                  Location <span style={{ color: 'magenta' }}>{this.state.zipCode}</span>
+                  Location <span style={{ color: 'magenta'}}>{this.state.zipCode}</span>
                 </span>
               }
             />

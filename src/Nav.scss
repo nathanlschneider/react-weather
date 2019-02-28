@@ -1,65 +1,83 @@
 .nav {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  height: 60px;
-  width: 100%;
-  background-color: #efefef;
-
-  &__logo {
-    margin: 20px;
-    color: #232323;
-    font-size: 48px;
-    font-family: 'Shrikhand', cursive;
-  }
-
-  &__links {
-  }
-
-  &__link {
-    text-decoration: none;
-    margin: 10px;
-    color: #232323;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  &__form {
-    top: 75px;
-    position: absolute;
-    width: 300px;
-    height: 150px;
-    background: rgb(228, 227, 227);
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-around;
     align-items: center;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px #23232355;
-  }
+    flex-direction: row;
+    height: 60px;
+    width: 100%;
+    background-color: #efefef;
+
+    &__logo {
+        margin: 20px;
+        color: #232323;
+        font-size: 48px;
+        font-family: 'Shrikhand', cursive;
+    }
+
+    &__links {
+    }
+
+    &__link {
+        text-decoration: none;
+        margin: 10px;
+        color: #232323;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    &__form {
+        top: 75px;
+        // left: 500px;
+        position: absolute;
+        width: 300px;
+        height: 150px;
+        background: rgb(228, 227, 227);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 5px;
+        box-shadow: 2px 2px 8px #23232355;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 137px;
+            z-index: 1;
+            border: solid 15px transparent;
+            border-bottom-color:  rgb(228,227,227);
+        }
+    }
 }
 .form__input {
-  &--magenta {
-    color: magenta;
-  }
+    &--magenta {
+        color: magenta;
+    }
 }
+
+.form__input {
+    margin: 10px;
+}
+.form__btn {
+}
+
 .example-enter {
-  opacity: 0.01;
+    opacity: 0.01;
 }
 
 .example-enter.example-enter-active {
-  opacity: 1;
-  transition: all 200ms ease;
-  transform: translateY(0);
+    opacity: 1;
+    transition: all 200ms ease;
+    transform: translateY(0);
 }
 
 .example-leave {
-  opacity: 1;
+    opacity: 1;
 }
 
 .example-leave.example-leave-active {
-  opacity: 0.01;
-  transition: all 200ms ease-in;
-  transform: translateY(-20px);
+    opacity: 0.01;
+    transition: all 200ms ease-in;
+    transform: translateY(-20px);
 }
