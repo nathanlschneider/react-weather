@@ -38,6 +38,7 @@
         flex-direction: column;
         border-radius: 5px;
         box-shadow: 2px 2px 8px #23232355;
+        z-index: 20;
 
         &:before {
             content: '';
