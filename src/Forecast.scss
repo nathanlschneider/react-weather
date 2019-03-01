@@ -8,6 +8,7 @@
   align-items: center;
   &__date {
     font-size: 12px;
+    color: magenta;
   }
   &__article {
     @include fadein;

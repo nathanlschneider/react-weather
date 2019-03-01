@@ -125,7 +125,7 @@ export default class App extends Component {
                     >
                         <Route path='/radar' component={Radar} />
                         <Route path='/current' render={props => <Current {...props} zipCode={this.state.zipCode} />} />
-                        <Route path='/forecast' component={Forecast} />
+                        <Route path='/forecast' render={props => <Forecast {...props} zipCode={this.state.zipCode} />} />
                         <Route path='/' component={Current} />
                     </main>
                     <footer className='app_footer' />

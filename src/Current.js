@@ -46,7 +46,9 @@ export default class Current extends Component {
           
             <section className='current'>
                 <article className='current__article'>
-                    <i className={'current__icon owf owf-pull-left owf-border owf-5x owf-' + this.state.icon} />
+                    <i className={'current__icon owf owf-pull-left owf-border owf-5x owf-' + this.state.icon} 
+                    style={this.state.weatherMain === 'Clear' ? {color: 'orange', backgroundColor: 'lightblue'} : { color: 'grey'}}
+                    />
                     <div className='current__text'>
                         <span>
                             <strong>{this.state.name}</strong>

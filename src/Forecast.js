@@ -10,7 +10,6 @@ export default class Forecast extends Component {
         };
     }
 
-    static defaultProps = { zipCode: 49418 };
 
     componentDidMount() {
         fetch(
@@ -27,7 +26,9 @@ export default class Forecast extends Component {
         let casts = this.state.forecastData.map((datum, index) => {
             return (
                 <article key={index} className='forecast__article'>
-                    <i className={'owf owf-3x owf-' + datum.weather[0].id} />
+                    <i className={'owf owf-3x owf-' + datum.weather[0].id} 
+                    style={datum.weather[0].description === 'clear sky' ? {color: 'orange'} : { color: 'grey'}}
+/>
                     <div>{datum.weather[0].description}</div>
                     <div className='forecast__date'>{datum.dt_txt}</div>
                 </article>
