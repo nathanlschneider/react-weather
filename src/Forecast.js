@@ -26,8 +26,8 @@ export default class Forecast extends Component {
     render() {
         let casts = this.state.forecastData.map((datum, index) => {
             return (
-                <article className='forecast__article'>
-                    <i key={index} className={'owf owf-3x owf-' + datum.weather[0].id} />
+                <article key={index} className='forecast__article'>
+                    <i className={'owf owf-3x owf-' + datum.weather[0].id} />
                     <div>{datum.weather[0].description}</div>
                     <div className='forecast__date'>{datum.dt_txt}</div>
                 </article>

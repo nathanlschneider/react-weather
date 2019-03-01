@@ -4,16 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   &__article {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #23232311;
+    background-color: #dfdfdf;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 2px 2px 4px #23232399;
-
     margin-top: 100px;
   }
   &__text {
@@ -30,4 +28,5 @@
     padding: 10px;
     border-radius: 5px;
   }
+
 }

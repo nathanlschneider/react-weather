@@ -25,6 +25,11 @@
         font-size: 24px;
         cursor: pointer;
         user-select: none;
+        outline: none;
+        
+        &--active {
+            font-weight: bold;
+        }
     }
     &__form {
         top: 75px;

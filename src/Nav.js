@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { CSSTransitionGroup } from 'react-transition-group'; // ES6
 
 import './Nav.scss';
@@ -21,16 +20,7 @@ export default class Nav extends Component {
         <nav className='nav'>
           <div className='nav__logo'>Weather</div>
           <div className='nav__links'>
-            <Link className='nav__link' to='/current'>
-              Current
-            </Link>
-            <Link className='nav__link' to='/forecast'>
-              Forecast
-            </Link>
-            <Link className='nav__link' to='/radar'>
-              Radar
-            </Link>
-            {this.props.locationLink}
+            {this.props.locationLinks}
           </div>
         </nav>
         <CSSTransitionGroup 
